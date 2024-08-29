@@ -3,25 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Operaciones - Factoring</title>
+    <title>Generador de PDF - Factoring</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Registro de Operaciones - Factoring</h1>
+        <h1>Hoja Resumen Comercial</h1>
 
         <form id="factoring-form">
             <div class="form-group">
-                <label for="ruc">RUC Cliente</label>
-                <input type="text" id="ruc" placeholder="Ingrese RUC" required>
+                <label for="num-solicitud">Nº Solicitud</label>
+                <input type="text" id="num-solicitud" placeholder="8679" required>
             </div>
             <div class="form-group">
-                <label for="razon-social">Razón Social</label>
-                <input type="text" id="razon-social" placeholder="Ingrese Razón Social" required>
+                <label for="nombre-cliente">Nombre</label>
+                <input type="text" id="nombre-cliente" placeholder="Consorcio Etel S.A.C." required>
             </div>
             <div class="form-group">
-                <label for="monto">Monto</label>
-                <input type="number" id="monto" placeholder="Ingrese Monto" required>
+                <label for="ruc-cliente">RUC</label>
+                <input type="text" id="ruc-cliente" placeholder="20609211025" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha-emision">Fecha de emisión</label>
+                <input type="date" id="fecha-emision" required>
+            </div>
+            <h3>Deudores</h3>
+            <div class="form-group">
+                <label for="num-doc">Número de documento</label>
+                <input type="text" id="num-doc" placeholder="E001-490" required>
+            </div>
+            <div class="form-group">
+                <label for="monto-doc">Monto documento</label>
+                <input type="number" id="monto-doc" placeholder="21240.00" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha-vcmto">Fecha de Vcmto.</label>
+                <input type="date" id="fecha-vcmto" required>
+            </div>
+            <div class="form-group">
+                <label for="importe-neto">Importe neto a pagar</label>
+                <input type="number" id="importe-neto" placeholder="18691.20" required>
+            </div>
+            <div class="form-group">
+                <label for="anticipo-bruto">Anticipo bruto</label>
+                <input type="number" id="anticipo-bruto" placeholder="18317.38" required>
+            </div>
+            <div class="form-group">
+                <label for="excedente">Excedente</label>
+                <input type="number" id="excedente" placeholder="373.82" required>
             </div>
             <button type="submit">Generar PDF</button>
         </form>
