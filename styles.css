@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.balance {
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+.income-expense {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.income, .expense {
+    width: 45%;
+}
+
+.transaction-form {
+    margin: 20px 0;
+}
+
+.transaction-form input, .transaction-form select {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.transaction-form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.transaction-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.transaction-list li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
