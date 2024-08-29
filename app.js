@@ -3,31 +3,43 @@ document.getElementById('transaction-form').addEventListener('submit', function(
 
     const description = document.getElementById('description').value;
     const amount = parseFloat(document.getElementById('amount').value);
+    const date = document.getElementById('date').value;
     const type = document.getElementById('type').value;
 
-    addTransaction(description, amount, type);
+    addTransaction(description, amount, date, type);
     updateBalance();
     clearForm();
 });
 
 let transactions = [];
 
-function addTransaction(description, amount, type) {
+function addTransaction(description, amount, date, type) {
     const transaction = {
         description,
-        amount: type === 'expense' ? -amount : amount
+        amount: type === 'expense' ? -amount : amount,
+        date: new Date(date)
     };
 
     transactions.push(transaction);
-    renderTransaction(transaction);
+    transactions.sort((a, b) => b.date - a.date);  // Ordenar por fecha, de más reciente a más antiguo
+
+    renderTransactions();
 }
 
-function renderTransaction(transaction) {
+function renderTransactions() {
     const transactionList = document.getElementById('transaction-list');
-    const listItem = document.createElement('li');
-    listItem.textContent = `${transaction.description} - $${transaction.amount.toFixed(2)}`;
+    transactionList.innerHTML = '';  // Limpiar la lista
 
-    transactionList.appendChild(listItem);
+    transactions.forEach(transaction => {
+        const listItem = document.createElement('li');
+        const dateString = transaction.date.toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        listItem.innerHTML = `${transaction.description} - $${transaction.amount.toFixed(2)} <span class="date">(${dateString})</span>`;
+        transactionList.appendChild(listItem);
+    });
 }
 
 function updateBalance() {
@@ -43,4 +55,5 @@ function updateBalance() {
 function clearForm() {
     document.getElementById('description').value = '';
     document.getElementById('amount').value = '';
+    document.getElementById('date').value = '';
 }
