@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Ingresos y Egresos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Ingresos y Egresos</h1>
+
+        <div class="balance">
+            <h2>Balance Total: $<span id="balance">0.00</span></h2>
+        </div>
+
+        <div class="income-expense">
+            <div class="income">
+                <h3>Ingresos</h3>
+                <p>$<span id="income">0.00</span></p>
+            </div>
+            <div class="expense">
+                <h3>Egresos</h3>
+                <p>$<span id="expense">0.00</span></p>
+            </div>
+        </div>
+
+        <div class="transaction-form">
+            <h3>Añadir Transacción</h3>
+            <form id="transaction-form">
+                <input type="text" id="description" placeholder="Descripción" required>
+                <input type="number" id="amount" placeholder="Monto ($)" required>
+                <select id="type" required>
+                    <option value="income">Ingreso</option>
+                    <option value="expense">Egreso</option>
+                </select>
+                <button type="submit">Añadir</button>
+            </form>
+        </div>
+
+        <div class="transaction-list">
+            <h3>Transacciones</h3>
+            <ul id="transaction-list">
+                <!-- Aquí se agregarán las transacciones -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
