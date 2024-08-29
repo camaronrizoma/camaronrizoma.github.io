@@ -3,50 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Ingresos y Egresos</title>
+    <title>Registro de Operaciones - Factoring</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Gestión de Ingresos y Egresos</h1>
+        <h1>Registro de Operaciones - Factoring</h1>
 
-        <div class="balance">
-            <h2>Balance Total: $<span id="balance">0.00</span></h2>
-        </div>
-
-        <div class="income-expense">
-            <div class="income">
-                <h3>Ingresos</h3>
-                <p>$<span id="income">0.00</span></p>
+        <form id="factoring-form">
+            <div class="form-group">
+                <label for="ruc">RUC Cliente</label>
+                <input type="text" id="ruc" placeholder="Ingrese RUC" required>
             </div>
-            <div class="expense">
-                <h3>Egresos</h3>
-                <p>$<span id="expense">0.00</span></p>
+            <div class="form-group">
+                <label for="razon-social">Razón Social</label>
+                <input type="text" id="razon-social" placeholder="Ingrese Razón Social" required>
             </div>
-        </div>
-
-        <div class="transaction-form">
-            <h3>Añadir Transacción</h3>
-            <form id="transaction-form">
-                <input type="text" id="description" placeholder="Descripción" required>
-                <input type="number" id="amount" placeholder="Monto ($)" required>
-                <input type="date" id="date" required>
-                <select id="type" required>
-                    <option value="income">Ingreso</option>
-                    <option value="expense">Egreso</option>
-                </select>
-                <button type="submit">Añadir</button>
-            </form>
-        </div>
-
-        <div class="transaction-list">
-            <h3>Transacciones</h3>
-            <ul id="transaction-list">
-                <!-- Aquí se agregarán las transacciones -->
-            </ul>
-        </div>
+            <div class="form-group">
+                <label for="monto">Monto</label>
+                <input type="number" id="monto" placeholder="Ingrese Monto" required>
+            </div>
+            <button type="submit">Generar PDF</button>
+        </form>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
